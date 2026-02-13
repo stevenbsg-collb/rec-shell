@@ -19,14 +19,11 @@ export const useAnalisisImagen = () => {
     try {
       const payload: AnalisisImagenYOLO_DTO = {
       ...analisisData,
-      fecha: analisisData.fecha
-        ? new Date(analisisData.fecha).toISOString().split('T')[0]
-        : new Date().toISOString().split('T')[0],
+      fecha: new Date(analisisData.fecha).toISOString().split('T')[0], // "2026-02-13"
     };
 
-
-      console.log('AnalisisData:',analisisData);
-      const response = await service.POST(analisisData);
+      console.log('AnalisisData:',payload);
+      const response = await service.POST(payload);
       return response;
     } catch (err: unknown) {
       setError(GET_ERROR(error));
