@@ -97,8 +97,15 @@ const buildDateKeys = (days: number) => {
   return out;
 };
 
-const buildDateKeysBetween = (start: Date, end: Date) => {
+// ✅ ahora acepta strings (YYYY-MM-DD) y las convierte internamente
+const buildDateKeysBetween = (startISO: string, endISO: string) => {
   const out: string[] = [];
+
+  const start = parseFecha(startISO);
+  const end = parseFecha(endISO);
+
+  if (!start || !end) return out;
+
   const s = new Date(start);
   const e = new Date(end);
 
@@ -156,7 +163,8 @@ const getPlanKey = (p: any) => {
 };
 
 type PeriodSeveridad = "7d" | "30d" | "90d" | "range";
-type RangeValue = [Date | null, Date | null];
+// ✅ Mantine en tu caso maneja strings
+type RangeValue = [string | null, string | null];
 
 export function DashboardAdminM1() {
   const [periodSeveridad, setPeriodSeveridad] = useState<PeriodSeveridad>("7d");
@@ -357,7 +365,6 @@ export function DashboardAdminM1() {
   if (planesFetchError) return <Alert color="red">{planesFetchError}</Alert>;
 
   return (
-    /*
     <Container size="xl" py="xl">
       <Stack gap="xl">
         <div>
@@ -368,8 +375,6 @@ export function DashboardAdminM1() {
             Monitoreo y análisis de cultivos de cacao
           </Text>
         </div>
-
-
 
         {totalDef90 > 0 && (
           <Alert
@@ -446,7 +451,12 @@ export function DashboardAdminM1() {
                 <Text size="xl" fw={700} mt="xs">
                   {promedioConfianza}%
                 </Text>
-                <RingProgress size={50} thickness={4} sections={[{ value: parseFloat(promedioConfianza), color: "violet" }]} mt="xs" />
+                <RingProgress
+                  size={50}
+                  thickness={4}
+                  sections={[{ value: parseFloat(promedioConfianza), color: "violet" }]}
+                  mt="xs"
+                />
               </div>
               <ThemeIcon size={60} radius="md" variant="light" color="violet">
                 <TrendingUp size={30} />
@@ -554,9 +564,9 @@ export function DashboardAdminM1() {
                           radius="xl"
                           size="lg"
                           clearable
-                          icon={<Clock size={16} />}
+                          leftSection={<Clock size={16} />}
                           popoverProps={{ shadow: "xl", radius: "lg", withinPortal: true }}
-                          maxDate={new Date()}
+                          maxDate={new Date().toISOString().slice(0, 10)}
                         />
                       )}
                     </Group>
@@ -585,7 +595,5 @@ export function DashboardAdminM1() {
         </Tabs>
       </Stack>
     </Container>
-    */
-   <Container size="xl" py="xl"></Container>
   );
 }
