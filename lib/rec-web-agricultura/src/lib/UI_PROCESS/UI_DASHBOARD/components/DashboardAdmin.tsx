@@ -357,6 +357,7 @@ export function DashboardAdminM1() {
   if (planesFetchError) return <Alert color="red">{planesFetchError}</Alert>;
 
   return (
+    /*
     <Container size="xl" py="xl">
       <Stack gap="xl">
         <div>
@@ -584,5 +585,7 @@ export function DashboardAdminM1() {
         </Tabs>
       </Stack>
     </Container>
+    */
+   <Container size="xl" py="xl"></Container>
   );
 }

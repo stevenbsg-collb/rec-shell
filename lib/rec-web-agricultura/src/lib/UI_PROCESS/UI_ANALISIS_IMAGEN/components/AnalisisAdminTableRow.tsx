@@ -31,7 +31,7 @@ interface AnalisisAdminTableRowProps {
   analisis: AnalisisImagenYOLO_DTO;
   onGenerarPlan: (analisis: AnalisisImagenYOLO_DTO) => void;
   isProcessing: boolean;
-  generatingAnalisisId: string | null;
+  generatingAnalisisId: number | null;
 }
 
 export function AnalisisAdminTableRow({
