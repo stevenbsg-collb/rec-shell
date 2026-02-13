@@ -1,0 +1,9 @@
+{
+  "name": "rec-web-usuario",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "lib/rec-web-usuario/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project rec-web-usuario --web",
+  "targets": {}
+}

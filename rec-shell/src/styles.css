@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* You can add global styles to this file, and also import other style files */
+
+
+
+/* Responsive helpers */
+:root { -webkit-text-size-adjust: 100%; }
+html, body, #root { height: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+
+@media (max-width: 48em) {
+  .hide-sm { display: none !important; }
+  .full-sm { width: 100% !important; }
+}
+
+@media (max-width: 62em) {
+  .hide-md { display: none !important; }
+}

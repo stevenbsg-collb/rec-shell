@@ -1,0 +1,50 @@
+{
+  "name": "rec-shell",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "rec-shell/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/rec-shell",
+        "baseHref": "/rec-shell/"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rec-shell:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rec-shell:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "rec-shell:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rec-shell:build"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "rec-web-layout",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "lib/rec-web-layout/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project rec-web-layout --web",
+  "targets": {}
+}

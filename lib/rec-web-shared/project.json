@@ -1,0 +1,9 @@
+{
+  "name": "rec-web-shared",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "lib/rec-web-shared/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project rec-web-shared --web",
+  "targets": {}
+}

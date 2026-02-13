@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@rec-shell/rec-web-agricultura": [
+        "lib/rec-web-agricultura/src/index.ts"
+      ],
+      "@rec-shell/rec-web-auth": ["lib/rec-web-auth/src/index.ts"],
+      
+      "@rec-shell/rec-web-layout": ["lib/rec-web-layout/src/index.ts"],
+      "@rec-shell/rec-web-shared": ["lib/rec-web-shared/src/index.ts"],
+      "@rec-shell/rec-web-usuario": ["lib/rec-web-usuario/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
