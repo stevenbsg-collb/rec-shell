@@ -16,6 +16,7 @@ export const environment = {
     //apiKey: 'AIzaSyA3m56gu6RJJ9etf1HRiP3m9LK2XmIVjxA',
   },
   yolo : {
-    url: 'http://localhost:8000'
+    url: 'https://kbzo-cacao-yolo-api.hf.space'
+    //'http://localhost:8000'
   }
 };
