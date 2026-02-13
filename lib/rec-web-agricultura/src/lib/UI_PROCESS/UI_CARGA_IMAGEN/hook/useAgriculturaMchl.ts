@@ -17,6 +17,14 @@ export const useAnalisisImagen = () => {
     setError(null);
     
     try {
+      const payload: AnalisisImagenYOLO_DTO = {
+      ...analisisData,
+      fecha: analisisData.fecha
+        ? new Date(analisisData.fecha).toISOString().split('T')[0]
+        : new Date().toISOString().split('T')[0],
+    };
+
+
       console.log('AnalisisData:',analisisData);
       const response = await service.POST(analisisData);
       return response;
